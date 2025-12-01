@@ -1,5 +1,4 @@
 # Brute-force-personalproject4
-In this project I simulated real world red team credential attacks by brute forcing exposed services, discovering weak default credentials, and how poor configurations can expand the attack surface of an organization.
 
 
 ![](.png)
@@ -25,8 +24,16 @@ In this project I simulated real world red team credential attacks by brute forc
 
 
 ## Overview
+• In this project I simulated real world red team credential attacks by brute forcing exposed services, identifying weak/default passwords, and demonstrating how poor authentication expands the attack surface of an organization.
+
 ## Objective
+• Evaluate the target for weak authentictaion controls such as default creds, anonymous login, and other misconfigurtaions to determine whether an attacker can gain initial access or a foothold on the network.
+
 ## Architecture
+
+![kali setup](Homelab-setup2.png)
+![metasploitble setup](Homelab-setup1.png)
+
 ## Recon/ Scanning methodology
 ## Attack Methodogy
 ## Findings
