@@ -47,7 +47,7 @@ Syntax: hyrda -L ms3U.txt -P /usr/share/wordlists/rockyou.txt (metasploitable-ip
 
 Syntax:
 hydra -L ms3U.txt -P /usr/share/wordlists/rockyou.txt (metasploitable-ip) telnet
-![Telnet Brute Force](images/Telnet-bf.png)
+![Telnet Brute Force](images/telnet-bf.png)
 
 3. SMB is used for file shares, authentication, and remote administration. Weak smb credentials can allow lateral movement and access to resources within a network
 
@@ -70,6 +70,19 @@ hydra -L ms3U.txt -P /usr/share/wordlists/rockyou.txt (metasploitable-ip) 8180
 
 
 ## Findings
+
+Every exposed service was configured with default credentials allowing successful authentication across the following services:
+• FTP - Default username and password granted me full access to the file system
+![FTP Login](images/ftp-login.png)
+![FTP Login](images/frp-login2.png)
+• Telnet - Weak credentials enabled remote shell access to the command line
+![Telnet Login](images/telnet-login.png)
+• SMB - Poor permissions gave me access to shared resources
+
+•
+•
+•
+
 ## Security Impact / Importance
 ## Recommendations
 ## Lessons Learned
