@@ -8,13 +8,12 @@
 
 ## Tools Used
 • nmap
-• burp suite
 • dvwa
 • OSINT
 • Hydra
 
 ## Architecture
-
+This project was conducted in my homelab using both my kali and metasploitable machines. They're both on the NAT Network called "LAB" which creates a private ethical pentesting environment isolated from the internet.
 ![kali setup](images/Homelab-setup2.png)
 ![metasploitble setup](images/Homelab-setup1.png)
 
