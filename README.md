@@ -36,9 +36,15 @@
 
 ## Recon/ Scanning methodology
 ping -c 3 (metasploitable-ip)
-![](.png)
+![ping scan](ping-scan.png)
 nmap -A -p 21,23,445,5432,8180
+![ping scan](scan2.png)
+![ping scan](scan3.png)
+![ping scan](scan4.png)
+
 OSINT search
+![OSINT search](OSINT.png)
+
 
 ## Attack Methodogy
 
