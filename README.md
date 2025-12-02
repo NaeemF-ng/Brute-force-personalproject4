@@ -1,28 +1,5 @@
 # Brute-force-personalproject4
 
-
-![](.png)
-![](.png)
-![](.png)
-![](.png)
-![](.png)
-![](.png)
-![](.png)
-![](.png)
-![](.png)
-![](.png)
-![](.png)
-![](.png)
-![](.png)
-![](.png)
-![](.png)
-![](.png)
-
-![](.png)
-![](.png)
-
-
-
 ## Overview
 • In this project I simulated real world red team credential attacks by brute forcing exposed services, identifying weak/default passwords, and demonstrating how poor authentication expands the attack surface of an organization.
 
@@ -57,27 +34,40 @@ OSINT search
 • Based off of the information from my nmap scans I saw that the target had a lot of vulnerabilities within it's security and I recognized a name, "Metasploitable". Metasploitable is known for having a large attack surface with weak creds being one of them. To further my search I used OSINT (Open Source Intelligence) also referred as passive recon, to search for the passwords to services in an attempt to gain access. 
 ![OSINT search](images/OSINT.png)
 
-• I then put together a wordlist of both possible passwords and usernames as default creds are usually the same word. (Ex: Admin:Admin) I didn't know which username would correlate to what password so I used a method refferred to as password spraying which is testing multiple passwords against each username in the wordlist provided simply put. I did this because it would save me time from running multiple scans and from being detected. I then began to brute force every service to see if default creds were being used
+• I then put together a wordlist of both possible passwords and usernames as default creds are usually the same word. (Ex: Admin:Admin) I didn't know which username would correlate to what password so I used a method refferred to as password spraying which is testing multiple passwords against each username in the wordlist provided simply put as well as every vulnerable service. I did this because it would save me time from running multiple scans and from being detected. I then began to brute force every service to see if default creds were being used
+
+1. File Transfer Protocol (FTP)
+
+FTP is used for file transfers but is configured with weak/default credentials most of the time. It's also vulnerable by sending credentials in cleartext and allowing anonymous access.
 
 Syntax: hyrda -L ms3U.txt -P /usr/share/wordlists/rockyou.txt (metasploitable-ip) ftp
 ![Password and userlist](images/OSINT-pws.png)
 
+2. Telnet is an insecure command line protocol that sends data in cleartext making it a high value target for credential attacks
 
-• I brute forced against the telnet service known as a old interfaace command line using the same password/username list and password sprayed
 Syntax:
-hyrda -L ms3U.txt -P /usr/share/wordlists/rockyou.txt (metasploitable-ip) telnet
+hydra -L ms3U.txt -P /usr/share/wordlists/rockyou.txt (metasploitable-ip) telnet
+![Telnet Brute Force](images/Telnet-bf.png)
 
-• I brute forced against smb (server message block) using the same password/username list and password sprayed
+3. SMB is used for file shares, authentication, and remote administration. Weak smb credentials can allow lateral movement and access to resources within a network
+
 Syntax:
 hydra -L ms3U.txt -P /usr/share/wordlists/rockyou.txt (metasploitable-ip) smb
+![SMB Brute Force](images/OSINT-pws-smb.png)
 
-• I brute forced against postgres using the same password/username list and password sprayed
-Syntax:
-hyrda -L ms3U.txt -P /usr/share/wordlists/rockyou.txt (metasploitable-ip) postgres
+4. PostgreSQL is a database service, if compromised it can expose valuable application data or credentials stored inside the database.
 
-• I brute forced against tomcat using the same password/username list and password sprayed
 Syntax:
-hyrda -L ms3U.txt -P /usr/share/wordlists/rockyou.txt (metasploitable-ip) 8180
+hydra -L ms3U.txt -P /usr/share/wordlists/rockyou.txt (metasploitable-ip) postgres
+![PostgreSQL Brute Force](images/postgres-bf.png)
+
+
+5. Tomcat exposes a management panel that is most often left with weak or default credentials, I targeted the admin login panel to test whether brute forcing would give me access the management interface
+
+Syntax:
+hydra -L ms3U.txt -P /usr/share/wordlists/rockyou.txt (metasploitable-ip) 8180
+![Tomcat Brute Force](images/http-get-scan.png)
+
 
 ## Findings
 ## Security Impact / Importance
