@@ -78,10 +78,14 @@ Every exposed service was configured with default credentials allowing successfu
 • Telnet - Weak credentials enabled remote shell access to the command line
 ![Telnet Login](images/telnet-login.png)
 • SMB - Poor permissions gave me access to shared resources
+![SMB Login](images/SMB-login.png)
+• PostgreSQL - Weak database credentials allowed me to interact with the backend database
+![Postgres Login](images/postgres-login.png)
 
-•
-•
-•
+• Apache Tomcat Manager (8180) - Default login enabled me admin access to the Tomcat Manager dashboard 
+![Tomcat Login](images/http-get-practice.png)
+![Tomcat Login](images/http-get-practice2.png)
+
 
 ## Security Impact / Importance
 ## Recommendations
