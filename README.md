@@ -17,7 +17,7 @@
 ![](.png)
 ![](.png)
 ![](.png)
-![](.png)
+
 ![](.png)
 ![](.png)
 
@@ -36,6 +36,7 @@
 
 ## Recon/ Scanning methodology
 ping -c 3 (metasploitable-ip)
+![](.png)
 nmap -A -p 21,23,445,5432,8180
 OSINT search
 
