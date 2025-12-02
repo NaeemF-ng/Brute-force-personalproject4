@@ -29,25 +29,32 @@
 ## Objective
 • Evaluate the target for weak authentictaion controls such as default creds, anonymous login, and other misconfigurtaions to determine whether an attacker can gain initial access or a foothold on the network.
 
+## Tools Used
+• nmap
+• burp suite
+• dvwa
+• OSINT
+• Hydra
+
 ## Architecture
 
-![kali setup](Homelab-setup2.png)
-![metasploitble setup](Homelab-setup1.png)
+![kali setup](images/Homelab-setup2.png)
+![metasploitble setup](images/Homelab-setup1.png)
 
 ## Recon/ Scanning methodology
 ping -c 3 (metasploitable-ip)
-![ping scan](ping-scan.png)
+![ping scan](images/ping-scan.png)
 nmap -A -p 21,23,445,5432,8180
-![ping scan](scan2.png)
-![ping scan](scan3.png)
-![ping scan](scan4.png)
+![ping scan](images/scan2.png)
+![ping scan](images/scan3.png)
+![ping scan](images/scan4.png)
 
 OSINT search
-![OSINT search](OSINT.png)
+![OSINT search](images/OSINT.png)
 
 
 ## Attack Methodogy
-
+• 
 
 ## Findings
 ## Security Impact / Importance
