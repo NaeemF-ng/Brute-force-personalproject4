@@ -47,13 +47,13 @@ Syntax: hyrda -L ms3U.txt -P /usr/share/wordlists/rockyou.txt (metasploitable-ip
 
 Syntax:
 hydra -L ms3U.txt -P /usr/share/wordlists/rockyou.txt (metasploitable-ip) telnet
-![Telnet Brute Force](images/telnet-bf.png)
+![Telnet Brute Force](images/telnet-bf-copy.png)
 
 3. SMB is used for file shares, authentication, and remote administration. Weak smb credentials can allow lateral movement and access to resources within a network
 
 Syntax:
 hydra -L ms3U.txt -P /usr/share/wordlists/rockyou.txt (metasploitable-ip) smb
-![SMB Brute Force](images/OSINT-pws-smb.png)
+![SMB Brute Force](images/OSINT-pws-smb-copy.png)
 
 4. PostgreSQL is a database service, if compromised it can expose valuable application data or credentials stored inside the database.
 
