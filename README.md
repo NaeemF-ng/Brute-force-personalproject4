@@ -88,8 +88,15 @@ Every exposed service was configured with default credentials allowing successfu
 
 
 ## Security Impact / Importance
+• The severity of these findings are severely high as the attack surface is large. An attacker could gain initial access very easily through almost anywhere everything is poorly configured and lack the proper security meaures. 
+
 ## Recommendations
+• Implement strong password policies to make gaining access to theese various services much harder decreasing the attack surface 
+
 ## Lessons Learned
+• Hydra brute forcing default credentials
+• Hydra http-post-form familiarity
+
 ## MITRE ATT&CK Mapping
 ## Conclusion
 
