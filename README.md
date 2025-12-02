@@ -81,21 +81,35 @@ Every exposed service was configured with default credentials allowing successfu
 • PostgreSQL - Weak database credentials allowed me to interact with the backend database
 ![Postgres Login](images/postgres-login.png)
 
-• Apache Tomcat Manager (8180) - Default login enabled me admin access to the Tomcat Manager dashboard 
+• Apache Tomcat Manager (8180) - Default login enabled me admin access to the Tomcat Manager dashboard where malicious .war extension files can be uploaded by an attacker allowing them to upload a shell
 ![Tomcat Login](images/http-get-practice.png)
 ![Tomcat Login](images/http-get-practice2.png)
 
 
 ## Security Impact / Importance
-• The severity of these findings are severely high as the attack surface is large. An attacker could gain initial access very easily through almost anywhere everything is poorly configured and lack the proper security meaures. 
+• The severity of these findings were crucial amd pose a high risk. Multiple services were configured with default/weak credentials allowing an attacker to gain initial access very easily with small effort. This drastically expands the attack surface of the organization resulting in adversary gain a foothold, pivot laterally, and escalate privileges
 
 ## Recommendations
-• Implement strong password policies to make gaining access to theese various services much harder decreasing the attack surface 
+• Implement strong and unique password policies to make gaining access to these various services much harder decreasing the attack surface 
+• Disable any unnecessary services such as telnet and anonymous login within FTP
+• Enable account lockout policies to limit and slow brute force attempts toward services
+
 
 ## Lessons Learned
-• Hydra brute forcing default credentials
-• Hydra http-post-form familiarity
+• Learned how bad service configuration and weak credentials create real attack paths
+• Improvement of my knowledge regarding service enumeration and interpreting nmap results
+• OSINT (passive recon) is just as valuable as active recon
+• Experience with hydra to brute force services (FTP, Telnet, SMB, PostgreSQL, Tomcat)
 
 ## MITRE ATT&CK Mapping
+
+TA0001 – Initial Access
+T1078 – Valid Accounts
+TA0006 – Credential Access
+T1110.001 – Password Guessing
+T1110.003 – Password Spraying
+T1110 – Brute Force
+
 ## Conclusion
 
+This project illustrated how attackers use brute force attacks to compromise poorly configured or exposed services. By showcasing how multiple services were using default credentials, I corroborated the need for strong authentication and service hardening to prevent unauthorized access. This personal project strengthened my skills in Reconnaissance, hydra usage, and real world credential attack methodology which is essential for red team operations and penetration testing. 
